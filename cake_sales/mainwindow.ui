@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>770</width>
+    <height>497</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cake Sales</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="4" column="1" colspan="2">
+       <widget class="QPushButton" name="deleteCakeButton">
+        <property name="text">
+         <string>Delete selected cake</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3" colspan="2">
+       <widget class="QPushButton" name="showCompositionButton">
+        <property name="text">
+         <string>Show the composition</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="sortTotalIncomeButton">
+        <property name="text">
+         <string>Sort by total income</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLogo" name="logo" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>145</width>
+          <height>130</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="7">
+       <widget class="QTableView" name="cakeTableView"/>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="sortNameButton">
+        <property name="text">
+         <string>Sort by name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QPushButton" name="sortTotalKgSoldButton">
+        <property name="text">
+         <string>Sort by total kg sold</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="addCakeButton">
+        <property name="text">
+         <string>Add cake</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>770</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QLogo</class>
+   <extends>QWidget</extends>
+   <header>qlogo.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

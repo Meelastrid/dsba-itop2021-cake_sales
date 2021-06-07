@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddCake</class>
+ <widget class="QDialog" name="AddCake">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>490</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>451</width>
+     <height>608</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Retail price per kg</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0" colspan="2">
+     <widget class="QLineEdit" name="wholesaleEdit"/>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Wholesale price per kg</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1">
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0" colspan="2">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Caloric value per 100g</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Add a cake</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Cake</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0" colspan="2">
+     <widget class="QLineEdit" name="caloricEdit"/>
+    </item>
+    <item row="9" column="0" colspan="2">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Sold (wholesale)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLineEdit" name="nameEdit"/>
+    </item>
+    <item row="7" column="0" colspan="2">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Sold (retail)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0" colspan="2">
+     <widget class="QLineEdit" name="soldWEdit"/>
+    </item>
+    <item row="13" column="0" colspan="2">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Composition of the cake</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QLineEdit" name="retailEdit"/>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QLineEdit" name="soldREdit"/>
+    </item>
+    <item row="14" column="0" colspan="2">
+     <widget class="QLineEdit" name="compEdit"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>nameEdit</tabstop>
+  <tabstop>retailEdit</tabstop>
+  <tabstop>wholesaleEdit</tabstop>
+  <tabstop>soldREdit</tabstop>
+  <tabstop>soldWEdit</tabstop>
+  <tabstop>caloricEdit</tabstop>
+  <tabstop>compEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>AddCake</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>AddCake</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
