@@ -17,7 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-    CakeModel m;
 
 
     // Data model
@@ -147,7 +146,7 @@ void MainWindow::slotAbout()
 {
     QMessageBox *msgBox = new QMessageBox(this);
     msgBox->setWindowTitle("About CakeSales");
-    msgBox->setText("Cake Sales App.\nBake, sell and save your favourite cakes!");
+    msgBox->setText("Cake Sales App.\nBake, sell and save your favourite cakes!\n Created by student 108");
     msgBox->show();
 }
 
