@@ -47,9 +47,9 @@ set(PROJECT_SOURCES
         cakecomposition.ui
         compmodel.cpp
         compmodel.h
-        top3.cpp
-        top3.h
-        top3.ui
+        ingredients.cpp
+        ingredients.h
+        ingredients.ui
         ${TS_FILES}
 )
 

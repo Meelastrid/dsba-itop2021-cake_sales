@@ -3,6 +3,7 @@
 #include "cakecomposition.h"
 #include "cakemodel.h"
 #include "mainwindow.h"
+#include "ingredients.h"
 #include <QDialog>
 #include <QFile>
 #include <QFileDialog>
@@ -16,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
+    CakeModel m;
+
 
     // Data model
     proxyModel->setSourceModel(cakeModel);
@@ -144,7 +147,7 @@ void MainWindow::slotAbout()
 {
     QMessageBox *msgBox = new QMessageBox(this);
     msgBox->setWindowTitle("About CakeSales");
-    msgBox->setText("Cake Sales App.\nBake, sell and save your favourite cakes!\nCreated by student 108");
+    msgBox->setText("Cake Sales App.\nBake, sell and save your favourite cakes!");
     msgBox->show();
 }
 
@@ -180,6 +183,8 @@ void MainWindow::loadTextFile(QString fileName)
     QAbstractItemModel *model = ui->cakeTableView->model();
     model->removeRows(0,model->rowCount() - 1);
     QFile inputFile(fileName);
+    QTextStream out(stdout);
+
     if (inputFile.open(QIODevice::ReadOnly)) {
 
         int i = 0; // file line counter
@@ -203,6 +208,16 @@ void MainWindow::loadTextFile(QString fileName)
                 QString value = lineToken.at(j);
                 QModelIndex index = model->index(i,ftc[j]);
                 model->setData(index, value);
+
+                // Add ingredients to the ingredients vector
+                if (j == lineToken.size()-1)
+                {
+                    QStringList ingredientsList = lineToken.at(j).split(",", Qt::SkipEmptyParts);
+                    for (int p = 0; p < ingredientsList.size(); p++)
+                    {
+                        this->ingredients.push_back(ingredientsList.at(p));
+                    }
+                }
             }
             // Update calculated fields
             for (int cell = 7; cell < 10; cell++)
@@ -285,4 +300,13 @@ void MainWindow::on_showTop3MostCaloricButton_clicked()
 {
 
 }
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    Ingredients *ingwindow = new Ingredients(this, this->ingredients);
+    ingwindow->show();
+
+    }
+
 
