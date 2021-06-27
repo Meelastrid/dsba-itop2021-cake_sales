@@ -38,6 +38,8 @@ private slots:
 
     void on_showTop3MostCaloricButton_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     void loadTextFile(QString fileName);
@@ -46,5 +48,7 @@ private:
     // Data model
     CakeModel *cakeModel = new CakeModel(this);
     QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(this);
+    // Store ingredients here
+    QVector<QString> ingredients = {};
 };
 #endif // MAINWINDOW_H
